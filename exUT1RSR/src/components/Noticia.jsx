@@ -68,7 +68,7 @@ const Noticia = ({avatar, titulo, fecha, imagenUrl, noticia, likes, alt, altAvat
         <CardContent  style={{ display: 'flex', alignItems: 'center' }}>
         {meGusta ? likes + 1: likes}
         <IconButton onClick={manejarMeGusta}>
-        {meGusta ? <FavoriteIcon color="success" /> : <FavoriteBorderIcon />}
+        {meGusta ? <FavoriteIcon color="success" /> : <FavoriteBorderIcon color="success" />}
         </IconButton>
         {meGusta ? <IconButton onClick={handleOpen}> <ShareIcon/></IconButton> : <IconButton disabled> <ShareIcon/></IconButton>}
         </CardContent>
