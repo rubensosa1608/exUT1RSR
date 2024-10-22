@@ -77,16 +77,6 @@ function App() {
               </Grid>
           ))}
       </Grid>
-                 {/* <Noticia 
-                 avatar = "../public/avatar01.png"
-                 altAvatar = "Imagen del avatar 1"
-                 titulo = "titulo 1"
-                 fecha = "19 de octubre de 2024"
-                 imagenUrl= "../public/sky.jpg"
-                 alt = "Imagen del cielo."
-                 noticia = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                 likes = {23}
-                /> */}
 
   </Container>
   )
