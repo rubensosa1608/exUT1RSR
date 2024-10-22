@@ -2,33 +2,93 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Noticia from './components/Noticia'; 
+import { Container } from '@mui/material';
+import Grid from '@mui/material/Grid2';
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const noticias = [
+    {
+        id: 1,
+        noticia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        avatar: '../public/avatar01.png',
+        alt: 'Imagen del cielo',
+        titulo: 'titulo 1',
+        fecha: '19 de Octubre de 2024',
+        altAvatar: 'Imagen del avatar 1',
+        imagenUrl: '../public/sky.jpg',
+        likes: 233
+    },
+    {
+      id: 2,
+      noticia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      avatar: '../public/avatar02.png',
+      alt: 'Imagen del mar',
+      titulo: 'titulo 2',
+      fecha: '14 de Febrero de 2024',
+      altAvatar: 'Imagen del avatar 2',
+      imagenUrl: '../public/sea.jpg',
+      likes: 23
+  },
+  {
+    id: 3,
+    noticia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    avatar: '../public/avatar03.png',
+    alt: 'Imagen de mario',
+    titulo: 'titulo 3',
+    fecha: '16 de Agosto de 2024',
+    altAvatar: 'Imagen del avatar 3',
+    imagenUrl: '../public/mario.jpg',
+    likes: 16
+},
+{
+  id: 4,
+  noticia: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  avatar: '../public/avatar04.png',
+  alt: 'Imagen de tux',
+  titulo: 'titulo 4',
+  fecha: '19 de Noviembre de 2024',
+  altAvatar: 'Imagen del avatar 4',
+  imagenUrl: '../public/tux.jpg',
+  likes: 100
+},
+    
+
+  ]
+
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+ <Container>
+        <Grid container>
+          {noticias.map((n) => (
+              <Grid item key={n.id}  sx={{paddingBottom: 5}}>
+                <Noticia 
+                  avatar = {n.avatar}
+                  altAvatar = {n.altAvatar}
+                  titulo = {n.titulo}
+                  fecha = {n.fecha}
+                  imagenUrl= {n.imagenUrl}
+                  alt = {n.alt}
+                  noticia = {n.noticia}
+                  likes = {n.likes}
+                  />
+              </Grid>
+          ))}
+      </Grid>
+                 {/* <Noticia 
+                 avatar = "../public/avatar01.png"
+                 altAvatar = "Imagen del avatar 1"
+                 titulo = "titulo 1"
+                 fecha = "19 de octubre de 2024"
+                 imagenUrl= "../public/sky.jpg"
+                 alt = "Imagen del cielo."
+                 noticia = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                 likes = {23}
+                /> */}
+
+  </Container>
   )
 }
 
